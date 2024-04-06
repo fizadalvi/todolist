@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- TO DO LIST Heading -->
+        <TextView
+            android:id="@+id/todoListHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TO DO LIST"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"/>
+
+        <!-- Add Task Button -->
+        <Button
+            android:id="@+id/addTaskBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Task"
+            android:layout_below="@id/todoListHeading"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <!-- Back Button -->
+
+        <!-- Your existing layout content goes here -->
+
+        <Button
+            android:id="@+id/navigationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/todoListHeading"
+            android:layout_marginStart="178dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@id/addTaskBtn"
+            android:onClick="navigateToTaskList"
+            android:text="->" />
+
+        <EditText
+            android:id="@+id/taskNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addTaskBtn"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:drawable/editbox_background"
+            android:hint="Task Name"
+            android:padding="8dp" />
+
+        <Spinner
+            android:id="@+id/prioritySpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/taskNameInput"
+            android:layout_marginStart="16dp"
+            android:entries="@array/priority_levels"
+            android:prompt="@string/priority_prompt"/>
+
+        <DatePicker
+            android:id="@+id/dueDatePicker"
+            android:layout_width="332dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/prioritySpinner"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="40dp"
+            android:calendarViewShown="false"
+            android:layout_marginBottom="16dp" />
+
+        <TimePicker
+            android:id="@+id/dueTimePicker"
+            android:layout_width="368dp"
+            android:layout_height="376dp"
+            android:layout_below="@id/dueDatePicker"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="19dp" />
+
+        <ListView
+            android:id="@+id/taskListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dueTimePicker"
+            android:layout_marginTop="16dp"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp"
+            android:padding="16dp"/>
+
+    </RelativeLayout>
+
+</ScrollView>
